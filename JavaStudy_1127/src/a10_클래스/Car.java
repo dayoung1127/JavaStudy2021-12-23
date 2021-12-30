@@ -15,7 +15,7 @@ public class Car {
 	private String model;
 	private int serialNumber;
 	
-	public Car() {  //		Car c4 = new Car(); 실행됨 , 생성자와 메소트 통해서만 접근 가능
+	public Car() {  //		Car c4 = new Car(); 실행됨 , 생성자와 메소트 통해서만 접근 가능 / 생성자는 반환자료형 없음(주소값을 반환)
 		System.out.println(carNumber);
 		System.out.println(model);
 	}
