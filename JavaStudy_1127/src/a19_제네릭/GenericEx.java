@@ -5,6 +5,8 @@ public class GenericEx {
 	public Message<? extends User> sendMessage(int select){ //?(와일드카드)가 아니면 return 유형 여러가지 못함
 		if(select == 1) {
 			PersonalUser personalUser = new PersonalUser("hwang dayoung");
+		//	Message<PersonalUser> message = new Message<PersonalUser>(10, personalUser);
+		//  return message;	
 			return new Message<PersonalUser>(10, personalUser);
 		}else if(select == 2) {
 			CompanyUser companyUser = new CompanyUser("korea it");

@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class Message<T> { //<T extends User> 일 경우 Message<String> <-  스트링 못넣음
 	private int code;
 	private T data;
+//	private E data2;
 }
