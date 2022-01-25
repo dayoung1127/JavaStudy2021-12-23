@@ -20,7 +20,13 @@ public class SingleTon {
 		System.out.println(본사.getProduct_code());
 		
 		
-		
+		/*
+		 * mariadb
+		 * ip주소(ex:아파트명), port는 상세주소(동), db명(도서관이름)
+		 * https://offbyone.tistory.com/199
+		 * primary key값으로 조회하면 하나의 값만 나옴
+		 * username하나만 ㅍ라이머리키로 했을경우 아이디 노출됨 노출하지않기 위해서 유니크 / 코드가 프라이머리로 씀
+		 */
 	}
 
 }
