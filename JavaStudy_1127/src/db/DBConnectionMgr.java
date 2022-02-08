@@ -37,10 +37,10 @@ import java.util.Vector;
  * @author  Anil Hemrajani
  */
 public class DBConnectionMgr { //서버만 db에 접속가능
-
+	
     private Vector connections = new Vector(10);
-    private String _driver = "org.gjt.mm.mysql.Driver", //어떤 db를 사용할지 선택
-    _url = "jdbc:mysql://127.0.0.1:80/java?useUnicode=true&characterEncoding=EUC_KR",
+    private String _driver = "org.mariadb.jdbc.Driver", //어떤 db를 사용할지 선택
+    _url = "jdbc:mariadb://127.0.0.1:8001/company?useUnicode=true",
     _user = "root",
     _password = "toor";
     
