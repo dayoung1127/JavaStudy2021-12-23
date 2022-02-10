@@ -7,11 +7,11 @@ import java.sql.ResultSet;
 import a22_데이터베이스.Dto.User;
 import db.DBConnectionMgr;
 
-public class InsertData {
+public class UserDao {
 	
 	private DBConnectionMgr pool;
 	
-	public InsertData(DBConnectionMgr pool) {
+	public UserDao(DBConnectionMgr pool) {
 		this.pool = pool; 
 	}
 	
@@ -55,16 +55,15 @@ public class InsertData {
 			pstmt.setString(1, username);
 			rs = pstmt.executeQuery(); //select만 executeQuery, return이 ResultSet이라서 rs에 넣어줌
 			
-			rs.next(); //iterator 처럼 bof에 있다가 next호출시 그 다음 행으로 감
-
-			user = User.builder()
+			if(rs.next()) {//iterator 처럼 bof에 있다가 next호출시 그 다음 행으로 감
+				user = User.builder()
 						.user_code(rs.getInt(1)) //rs.getInt(1); //usercode라서 int, 1부터 시작함
 						.username(rs.getString(2))
 						.password(rs.getString(3))
 						.name(rs.getString(4))
 						.email(rs.getString(5))
-						.build();
-			
+						.build();				
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -76,20 +75,7 @@ public class InsertData {
 		
 	}
 	
-	public static void main(String[] args) {
-		InsertData insertData = new InsertData(DBConnectionMgr.getInstance()); //getInstance는 싱글톤
-		
-		User user1 = User.builder()
-						.username("hello")
-						.password("1234")
-						.name("다영")
-						.email("wou3768@gmail.com")
-						.phone("010-7207-3926")
-						.addr("연제구")
-						.build();
-		
-		//insertData.InsertUser(user1);
-		System.out.println(insertData.getUser("hello"));
+
 	}
 
-}
+
